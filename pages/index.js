@@ -6,6 +6,8 @@ import Portfolio from "@/components/portfolio";
 import Team from "@/components/team";
 import Head from "next/head";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default function Home() {
 	return (
 		<>
@@ -21,3 +23,9 @@ export default function Home() {
 		</>
 	);
 }
+
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});

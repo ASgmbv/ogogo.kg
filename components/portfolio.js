@@ -12,9 +12,12 @@ import {
 	Button,
 	Icon,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { BsArrowRight } from "react-icons/bs";
 
 const Portfolio = () => {
+	const { t } = useTranslation("common");
+
 	return (
 		<Box my={["80px", null, "100px"]} id="portfolio">
 			<Container maxW="container.xl">
@@ -28,7 +31,7 @@ const Portfolio = () => {
 						</VStack>
 						<Project
 							idx={0}
-							description={`Онлайн сервис для поиска, вызова и оплаты услуг такси которые могут использовать частные водители Кыргызстана ! С помощью приложения Ogogo taxi пассажир резервирует машину с водителем и отслеживает её перемещение к указанной точке в онлайн режиме.`}
+							description={t("projects.taxi.description")}
 							title={
 								<Flex alignItems="center">
 									<Image src="/academy-logo.png" width="50px" mr="3" />
@@ -39,7 +42,7 @@ const Portfolio = () => {
 						/>
 						<Project
 							idx={1}
-							description={`Образовательное учреждение в котором люди любого возраста за короткие сроки могут получить качественное образование в сфереIT. Основная концепция OGOGO академии это дарить знания вместе с эмоциями, развивая не только технические навыки, но и личные качества наших... `}
+							description={t("projects.academy.description")}
 							title={
 								<Flex alignItems="center">
 									<Image src="/academy-logo.png" width="50px" mr="3" />
@@ -50,7 +53,7 @@ const Portfolio = () => {
 						/>
 						<Project
 							idx={2}
-							description={`Компания занимается внедрением информационных технологий в различные сферы предприятий, как для частных потребителей так и крупных предприятий.`}
+							description={t("projects.development.description")}
 							title={
 								<Flex alignItems="center">
 									<Image src="/ogogo-logo.png" width="50px" mr="3" />
@@ -61,7 +64,7 @@ const Portfolio = () => {
 						/>
 						<Project
 							idx={3}
-							description={`Маркетплейс туристических услуг, мы даем доступ туристам к безопасному, уникальному и доступному отдыху по всей Центральной Азии. Demaloo там где начинаются впечатления. `}
+							description={t("projects.demaloo.description")}
 							title={
 								<Flex alignItems="center">
 									<Image src="/demaloo-logo.png" width="40px" mr="5" />
@@ -78,6 +81,8 @@ const Portfolio = () => {
 };
 
 const Project = ({ idx, description, title, image }) => {
+	const { t } = useTranslation("common");
+
 	return (
 		<Grid templateColumns={["1fr", null, "1fr 1fr"]} gap={[10]}>
 			<Stack
@@ -101,7 +106,7 @@ const Project = ({ idx, description, title, image }) => {
 					color="#FF7A00"
 					rightIcon={<Icon as={BsArrowRight} />}
 				>
-					Подробнее
+					{t("projects.project-button")}
 				</Button>
 			</Stack>
 			<AspectRatio

@@ -1,0 +1,64 @@
+{
+	"banner": {
+		"title": "we create products to improve the lives of people, the prosperity of the country and the development of a startup ecosystem.",
+		"button": "Products"
+	},
+	"pages": {
+		"missions": "Missions",
+		"projects": "Projects",
+		"team": "Team"
+	},
+	"mission": {
+		"title": "Mission",
+		"people": {
+			"title": "People",
+			"description": "We put our users at the forefront, all our products are designed to improve and make life easier for as many people as possible. We are proud of the products we have created and hope that the products we create in the future will have an even greater positive impact on your life."
+		},
+		"country": {
+			"title": "Country",
+			"description": "OGOGO Group closely cooperates with the public sector, we intend to help to transform the field of public administration, implementation of Data-Driven Government, implementation of government projects and digitalization of all spheres of life of our citizens."
+		},
+		"ecosystem": {
+			"title": "Ecosystem",
+			"description": "We aim to create a product that will be used by millions of people around the world, for this we need a strong IT and startup ecosystem. Ogogo Group actively financialy invests and develops startups, trains people in IT education, attracts international investors and organizations, holds events, and promotes our ecosystem abroad. We believe that unicorn will soon be released from Kyrgyzstan (a company with a valuation of more than a billion dollars)"
+		}
+	},
+	"projects": {
+		"title": "Products",
+		"project-button": "Details",
+		"taxi": {
+			"description": "Online service for searching, calling and paying for taxi services that can be used by private drivers of Kyrgyzstan! With the help of the Ogogo taxi application, a passenger reserves a car with a driver and tracks its movement to a specified point online. Also, Ogogo taxi is not only a commercial, but also partly a social project. Since it is aimed at developing the domestic economy of the country through the provision of new jobs and money circulation within the country"
+		},
+		"academy": {
+			"description": "An educational institution in which people of any age can get a high-quality education in the field of IT in a short time. The main concept of OGOGO Academy is to give knowledge along with emotion, developing not only technical skills, but also the personal qualities of our students. The company's goal is to nurture new competitive IT specialists for the global computer technology market."
+		},
+		"development": {
+			"description": "The company is engaged in the implementation of information technology in various areas of enterprises, both for private consumers and large enterprises. Our company helps our clients unleash the desired potential of their enterprise to a completely different level by integrating innovative ideas and fresh trends in the design world. We implement the ideas of our clients with the help of high-quality personnel in the IT infrastructure."
+		},
+		"demaloo": {
+			"description": "Marketplace of travel services, we give tourists access to a safe, unique and affordable vacation throughout Central Asia. Demaloo is where the experience begins."
+		}
+	},
+	"team": {
+		"title": "Team",
+		"ahror": {
+			"name": "Ahror Iminov",
+			"description": "Founder"
+		},
+		"islam": {
+			"name": "Islam Belgibaev",
+			"description": "OGOGO Academy"
+		},
+		"nurtilek": {
+			"name": "Nurtilek Beishe",
+			"description": "Demaloo"
+		},
+		"azamat": {
+			"name": "Azamat Urkinbaev",
+			"description": "OGOGO Soft"
+		}
+	},
+	"footer": {
+		"rights": "All Rights Reserved"
+	}
+}

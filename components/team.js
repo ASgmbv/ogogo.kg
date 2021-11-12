@@ -7,8 +7,11 @@ import {
 	Text,
 	VStack,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 const Team = () => {
+	const { t } = useTranslation("common");
+
 	return (
 		<Box my={["80px", null, "100px"]} id="team">
 			<Container maxW="container.xl">
@@ -19,7 +22,7 @@ const Team = () => {
 						mb={["50px", null, "100px"]}
 					>
 						<Heading size="xl" letterSpacing="wide">
-							Наша Команда
+							{t("team.title")}
 						</Heading>
 						<Box height="5px" bg="#FF7A00" width="200px"></Box>
 					</VStack>
@@ -37,23 +40,23 @@ const Team = () => {
 					>
 						<Member
 							image="/ahror.png"
-							name="Ахрор Иминов"
-							position="Основатель"
+							name={t("team.ahror.name")}
+							position={t("team.ahror.description")}
 						/>
 						<Member
 							image="/islam.png"
-							name="Ислам Белгибаев"
-							position="OGOGO Academy"
+							name={t("team.islam.name")}
+							position={t("team.islam.description")}
 						/>
 						<Member
 							image="/nurtilek.png"
-							name="Нуртилек Бейше"
-							position="Demaloo"
+							name={t("team.nurtilek.name")}
+							position={t("team.nurtilek.description")}
 						/>
 						<Member
 							image="/azamat.png"
-							name="Азамат Уркинбаев"
-							position="OGOGO Soft"
+							name={t("team.azamat.name")}
+							position={t("team.azamat.description")}
 						/>
 					</Grid>
 				</Box>

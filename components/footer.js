@@ -9,6 +9,7 @@ import {
 	Circle,
 	Link,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import {
 	FaInstagram,
 	FaFacebook,
@@ -18,15 +19,17 @@ import {
 import { MdOutlineEmail, MdOutlineLocationOn, MdPhone } from "react-icons/md";
 
 const Footer = () => {
+	const { t } = useTranslation("common");
+
 	return (
 		<Box bg="#EBF3FF">
 			<Container maxW="container.xl">
 				<Flex py="50px" justifyContent="space-between" alignItems="start">
 					<Image src="/logo-orange.svg" />
 					<Stack spacing="4" display={["none", null, "flex"]}>
-						<Link href="/#mission">Миссия</Link>
-						<Link href="/#portfolio">Проекты</Link>
-						<Link href="/#team">Команда</Link>
+						<Link href="/#mission">{t("pages.missions")}</Link>
+						<Link href="/#portfolio">{t("pages.projects")}</Link>
+						<Link href="/#team">{t("pages.team")}</Link>
 					</Stack>
 					<Stack spacing="4">
 						<Circle size="40px" bg="white" color="gray.600">
@@ -51,7 +54,7 @@ const Footer = () => {
 					flexDirection={["column-reverse", null, "row"]}
 				>
 					<Text as="span" fontSize="sm" mt={[6, null, 0]}>
-						© 2021 Все Права Защищены
+						© 2021{` ${t("footer.rights")}`}
 					</Text>
 					<Stack direction={["column", null, "row"]} spacing="6">
 						<Flex alignItems="center">

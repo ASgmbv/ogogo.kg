@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import { appWithTranslation } from "next-i18next";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
 
@@ -10,4 +11,4 @@ function MyApp({ Component, pageProps }) {
 	);
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

@@ -8,7 +8,11 @@ import {
 	Stack,
 } from "@chakra-ui/react";
 
+import { useTranslation } from "next-i18next";
+
 const Banner = () => {
+	const { t } = useTranslation("common");
+
 	return (
 		<Box
 			height={["600px", null, "650px"]}
@@ -29,10 +33,9 @@ const Banner = () => {
 					>
 						<Heading mb="4" maxW="650px" lineHeight="tall" size="lg">
 							<Text as="span" color="#FF7A00">
-								OGOGO GROUP{" "}
+								{"OGOGO GROUP - "}
 							</Text>
-							- cоздаем продукты для улучшения жизни людей, процветания
-							страны и развитие стартап экосистемы
+							{t("banner.title")}
 						</Heading>
 						<Button
 							size="lg"
@@ -45,7 +48,7 @@ const Banner = () => {
 								bg: "#bd5f09",
 							}}
 						>
-							Все проекты
+							{t("banner.button")}
 						</Button>
 					</Stack>
 				</Container>
