@@ -51,7 +51,7 @@ const Footer = () => {
 					flexDirection={["column-reverse", null, "row"]}
 				>
 					<Text as="span" fontSize="sm" mt={[6, null, 0]}>
-						© 2021 All Rights Reserved
+						© 2021 Все Права Защищены
 					</Text>
 					<Stack direction={["column", null, "row"]} spacing="6">
 						<Flex alignItems="center">
