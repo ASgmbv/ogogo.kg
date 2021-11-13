@@ -30,7 +30,11 @@ const Portfolio = () => {
 							description={t("projects.taxi.description")}
 							title={
 								<Flex alignItems="center">
-									<Image src="/academy-logo.png" width="50px" mr="3" />
+									<Image
+										src="/ogogo-logo.png"
+										width={["25px", null, "50px"]}
+										mr="3"
+									/>
 									<Heading size="lg">OGOGO Taxi</Heading>
 								</Flex>
 							}
@@ -41,7 +45,11 @@ const Portfolio = () => {
 							description={t("projects.academy.description")}
 							title={
 								<Flex alignItems="center">
-									<Image src="/academy-logo.png" width="50px" mr="3" />
+									<Image
+										src="/academy-logo.png"
+										width={["25px", null, "50px"]}
+										mr="3"
+									/>
 									<Heading size="lg">OGOGO Academy</Heading>
 								</Flex>
 							}
@@ -52,7 +60,11 @@ const Portfolio = () => {
 							description={t("projects.development.description")}
 							title={
 								<Flex alignItems="center">
-									<Image src="/ogogo-logo.png" width="50px" mr="3" />
+									<Image
+										src="/ogogo-logo.png"
+										width={["25px", null, "50px"]}
+										mr="3"
+									/>
 									<Heading size="lg">OGOGO Development</Heading>
 								</Flex>
 							}
@@ -63,7 +75,11 @@ const Portfolio = () => {
 							description={t("projects.demaloo.description")}
 							title={
 								<Flex alignItems="center">
-									<Image src="/demaloo-logo.png" width="40px" mr="5" />
+									<Image
+										src="/demaloo-logo.png"
+										width={["20px", null, "40px"]}
+										mr="5"
+									/>
 									<Heading size="lg">Demaloo</Heading>
 								</Flex>
 							}
@@ -80,9 +96,9 @@ const Project = ({ idx, description, title, image }) => {
 	const { t } = useTranslation("common");
 
 	return (
-		<Grid templateColumns={["1fr", null, "1fr 1fr"]} gap={[10]}>
+		<Grid templateColumns={["1fr", null, "1fr 1fr"]} gap={[6, null, 10]}>
 			<Stack
-				spacing="6"
+				spacing={[4, null, 6]}
 				textAlign="start"
 				alignItems="start"
 				alignSelf="center"
@@ -95,7 +111,9 @@ const Project = ({ idx, description, title, image }) => {
 				ml={[0, null, idx % 2 === 0 ? 0 : 20]}
 			>
 				{title}
-				<Text lineHeight="30px">{description}</Text>
+				<Text lineHeight="30px" fontSize={["sm", null, "md"]}>
+					{description}
+				</Text>
 				<Button
 					variant="link"
 					colorScheme="orange"

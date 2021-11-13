@@ -7,7 +7,9 @@ const Team = () => {
 
 	return (
 		<Box my={["80px", null, "100px"]} id="team">
-			<Title mb={["50px", null, "100px"]}>{t("team.title")}</Title>
+			<Container maxW="container.xl">
+				<Title mb={["50px", null, "100px"]}>{t("team.title")}</Title>
+			</Container>
 			<Container maxW="container.lg">
 				<Box>
 					<Grid
