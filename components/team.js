@@ -7,10 +7,9 @@ const Team = () => {
 
 	return (
 		<Box my={["80px", null, "100px"]} id="team">
+			<Title mb={["50px", null, "100px"]}>{t("team.title")}</Title>
 			<Container maxW="container.lg">
 				<Box>
-					<Title mb={["50px", null, "100px"]}>{t("team.title")}</Title>
-
 					<Grid
 						templateColumns={["1fr 1fr ", null, "1fr 1fr 1fr 1fr"]}
 						justifyItems="center"
@@ -53,6 +52,11 @@ const Member = ({ image, name, position }) => {
 				backgroundSize="cover"
 				maxW="450px"
 				width="100%"
+				boxShadow={[
+					"6px 6px 0px 0px #febc7b",
+					null,
+					"8px 8px 0px 0px #febc7b",
+				]}
 			>
 				<Flex
 					boxSize="100%"

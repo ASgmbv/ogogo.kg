@@ -113,13 +113,13 @@ const Project = ({ idx, description, title, image }) => {
 					idx % 2 === 0 ? "1 / 2 / 2 / 3" : "1 / 1 / 2 / 2",
 				]}
 				boxShadow={[
-					0,
+					"6px 6px 0px 0px #febc7b",
 					null,
 					idx % 2 === 0
-						? "-20px 20px 0px 0px #febc7b"
-						: "20px 20px 0px 0px #febc7b",
+						? "-8px 8px 0px 0px #febc7b"
+						: "8px 8px 0px 0px #febc7b",
 				]}
-				borderRadius="2xl"
+				borderRadius="sm"
 				overflow="hidden"
 			>
 				<Image src={image} layout="fill" objectFit="contain" />
