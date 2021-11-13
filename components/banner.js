@@ -26,11 +26,11 @@ const Banner = () => {
 					<Stack
 						justifyContent="center"
 						alignItems={["center", null, "start"]}
-						color="white"
 						height="100%"
 						spacing="10"
 					>
 						<Heading
+							color="white"
 							mb="4"
 							maxW="650px"
 							lineHeight="tall"
@@ -42,15 +42,19 @@ const Banner = () => {
 							</Text>
 							{t("banner.title")}
 						</Heading>
+
 						<Button
+							borderRadius="full"
 							size="lg"
-							color="white"
-							bg="#FF7A00"
+							px="5"
+							bg="white"
 							_hover={{
-								bg: "#bd5f09",
+								bg: "brand",
+								color: "white",
 							}}
 							_active={{
-								bg: "#bd5f09",
+								bg: "darkBrand",
+								color: "white",
 							}}
 						>
 							{t("banner.button")}

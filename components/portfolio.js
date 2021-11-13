@@ -23,11 +23,7 @@ const Portfolio = () => {
 			<Container maxW="container.xl">
 				<Box>
 					<Stack spacing={["80px", null, "150px"]}>
-						<Flex
-							mb={["50px", null, "100px"]}
-							textAlign="center"
-							alignItems="center"
-						>
+						<Flex textAlign="center" alignItems="center">
 							<Divider
 								borderWidth="1px"
 								opacity="0.5"
@@ -116,7 +112,7 @@ const Project = ({ idx, description, title, image }) => {
 				ml={[0, null, idx % 2 === 0 ? 0 : 20]}
 			>
 				{title}
-				<Text lineHeight="28px">{description}</Text>
+				<Text lineHeight="30px">{description}</Text>
 				<Button
 					variant="link"
 					colorScheme="orange"
@@ -142,7 +138,6 @@ const Project = ({ idx, description, title, image }) => {
 				]}
 				borderRadius="2xl"
 				overflow="hidden"
-				// maxW="450px"
 			>
 				<Image src={image} layout="fill" objectFit="contain" />
 			</AspectRatio>

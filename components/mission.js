@@ -9,6 +9,7 @@ import {
 	Icon,
 	Center,
 	Divider,
+	// Image,
 } from "@chakra-ui/react";
 import { BsPeople } from "react-icons/bs";
 import { GiSunflower } from "react-icons/gi";
@@ -57,6 +58,7 @@ const Mission = () => {
 									>
 										<Icon as={BsPeople} boxSize="30px" />
 									</Center>
+									// <Image src="/people.png" boxSize="80px" />
 								}
 								title={t("mission.people.title")}
 								description={t("mission.people.description")}
@@ -71,6 +73,7 @@ const Mission = () => {
 									>
 										<Icon as={GiSunflower} boxSize="30px" />
 									</Center>
+									// <Image src="/country.png" boxSize="80px" />
 								}
 								title={t("mission.country.title")}
 								description={t("mission.country.description")}
@@ -85,6 +88,7 @@ const Mission = () => {
 									>
 										<Icon as={FiCheckCircle} boxSize="30px" />
 									</Center>
+									// <Image src="/eco.png" boxSize="80px" />
 								}
 								title={t("mission.ecosystem.title")}
 								description={t("mission.ecosystem.description")}
@@ -107,12 +111,13 @@ const Description = ({ icon, title, description }) => {
 			alignItems="start"
 		>
 			{icon}
-			<Heading fontWeight="medium" size="lg">
+			<Heading
+				size="lg"
+				// textShadow="3px -3px #FF7A00"
+			>
 				{title}
 			</Heading>
-			<Text lineHeight="taller" color="#646464">
-				{description}
-			</Text>
+			<Text lineHeight="taller">{description}</Text>
 		</Stack>
 	);
 };
