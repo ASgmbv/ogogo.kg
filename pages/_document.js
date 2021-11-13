@@ -1,13 +1,20 @@
-import React from "react";
-import Document, { Head, Html, Main, NextScript } from "next/document";
-import { GoogleFonts } from "next-google-fonts";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
 	render() {
 		return (
-			<Html lang="ru">
-				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap" />
-				<Head></Head>
+			<Html>
+				<Head>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+						rel="stylesheet"
+					></link>
+
+					<link
+						href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+						rel="stylesheet"
+					></link>
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
