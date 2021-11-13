@@ -7,13 +7,13 @@ import {
 	Heading,
 	Stack,
 	Text,
-	Divider,
 	Image,
 	Button,
 	Icon,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { BsArrowRight } from "react-icons/bs";
+import Title from "./title";
 
 const Portfolio = () => {
 	const { t } = useTranslation("common");
@@ -23,25 +23,8 @@ const Portfolio = () => {
 			<Container maxW="container.xl">
 				<Box>
 					<Stack spacing={["80px", null, "150px"]}>
-						<Flex textAlign="center" alignItems="center">
-							<Divider
-								borderWidth="1px"
-								opacity="0.5"
-								borderColor="brand"
-							/>
-							<Heading
-								fontSize={["3xl", null, "40px"]}
-								letterSpacing="wide"
-								mx="4"
-							>
-								{t("projects.title")}
-							</Heading>
-							<Divider
-								borderWidth="1px"
-								opacity="0.5"
-								borderColor="brand"
-							/>
-						</Flex>
+						<Title>{t("projects.title")}</Title>
+
 						<Project
 							idx={0}
 							description={t("projects.taxi.description")}

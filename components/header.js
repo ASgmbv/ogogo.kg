@@ -37,7 +37,7 @@ const Header = () => {
 			<Container maxW="container.xl">
 				<Flex alignItems="center" justifyContent="space-between">
 					<a href="/">
-						<Image src="/logo.svg" width="180px" mt="5px" />
+						<Image src="/logo-g.svg" width={["40px", null, "45px"]} />
 					</a>
 					<Stack
 						direction="row"
@@ -46,15 +46,15 @@ const Header = () => {
 						justifyContent="center"
 						alignItems="center"
 					>
-						<Link href="/#mission" letterSpacing="wider" color="white">
+						<Link href="/#mission" letterSpacing="wide" color="white">
 							{t("pages.missions")}
 						</Link>
 
-						<Link href="/#portfolio" letterSpacing="wider" color="white">
+						<Link href="/#portfolio" letterSpacing="wide" color="white">
 							{t("pages.projects")}
 						</Link>
 
-						<Link href="/#team" letterSpacing="wider" color="white">
+						<Link href="/#team" letterSpacing="wide" color="white">
 							{t("pages.team")}
 						</Link>
 

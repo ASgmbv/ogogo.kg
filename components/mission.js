@@ -4,17 +4,15 @@ import {
 	Grid,
 	Heading,
 	Text,
-	Flex,
 	Stack,
 	Icon,
 	Center,
-	Divider,
-	// Image,
 } from "@chakra-ui/react";
 import { BsPeople } from "react-icons/bs";
 import { GiSunflower } from "react-icons/gi";
 import { FiCheckCircle } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import Title from "./title";
 
 const Mission = () => {
 	const { t } = useTranslation("common");
@@ -24,30 +22,14 @@ const Mission = () => {
 			<Box my={["80px", null, "100px"]} as="section" id="mission">
 				<Container maxW="container.xl">
 					<Box>
-						<Flex
-							mb={["50px", null, "100px"]}
-							textAlign="center"
-							alignItems="center"
+						<Title mb={["50px", null, "100px"]}>
+							{t("mission.title")}
+						</Title>
+
+						<Grid
+							templateColumns={["1fr", null, "1fr 1fr 1fr"]}
+							gap={[10]}
 						>
-							<Divider
-								borderWidth="1px"
-								opacity="0.5"
-								borderColor="brand"
-							/>
-							<Heading
-								fontSize={["3xl", null, "40px"]}
-								letterSpacing="wide"
-								mx="4"
-							>
-								{t("mission.title")}
-							</Heading>
-							<Divider
-								borderWidth="1px"
-								opacity="0.5"
-								borderColor="brand"
-							/>
-						</Flex>
-						<Grid templateColumns={["1fr", null, "1fr 1fr 1fr"]} gap="4">
 							<Description
 								icon={
 									<Center
@@ -105,9 +87,9 @@ const Description = ({ icon, title, description }) => {
 	return (
 		<Stack
 			spacing="6"
-			padding={[4, null, 6]}
+			padding={[0, null, 6]}
 			borderRadius="xl"
-			border="1px solid rgba(0, 0, 0, 0.1)"
+			border={["none", null, "1px solid rgba(0, 0, 0, 0.1)"]}
 			alignItems="start"
 		>
 			{icon}

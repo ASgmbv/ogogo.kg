@@ -1,55 +1,20 @@
-import {
-	Box,
-	Container,
-	Flex,
-	Grid,
-	Heading,
-	Text,
-	Divider,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import Title from "./title";
 
 const Team = () => {
 	const { t } = useTranslation("common");
 
 	return (
 		<Box my={["80px", null, "100px"]} id="team">
-			<Container maxW="container.xl">
+			<Container maxW="container.lg">
 				<Box>
-					<Flex
-						mb={["50px", null, "100px"]}
-						textAlign="center"
-						alignItems="center"
-					>
-						<Divider
-							borderWidth="1px"
-							opacity="0.5"
-							borderColor="brand"
-						/>
-						<Heading
-							fontSize={["3xl", null, "40px"]}
-							letterSpacing="wide"
-							mx="4"
-						>
-							{t("team.title")}
-						</Heading>
-						<Divider
-							borderWidth="1px"
-							opacity="0.5"
-							borderColor="brand"
-						/>
-					</Flex>
+					<Title mb={["50px", null, "100px"]}>{t("team.title")}</Title>
+
 					<Grid
-						templateColumns={[
-							"1fr",
-							null,
-							"1fr 1fr ",
-							null,
-							"1fr 1fr 1fr 1fr",
-						]}
+						templateColumns={["1fr 1fr ", null, "1fr 1fr 1fr 1fr"]}
 						justifyItems="center"
-						columnGap="6"
-						rowGap={[10, null, 20]}
+						gap={[4]}
 					>
 						<Member
 							image="/ahror.png"
@@ -80,32 +45,42 @@ const Team = () => {
 
 const Member = ({ image, name, position }) => {
 	return (
-		<Box
-			height={["450px"]}
-			backgroundImage={`url(${image})`}
-			backgroundPosition="top"
-			backgroundSize="cover"
-			maxW="450px"
-			width="100%"
-		>
-			<Flex
-				boxSize="100%"
-				background="linear-gradient(0deg, rgba(255, 122, 0, 0.4) 10%, rgba(255, 255, 255, 0) 50%);"
-				flexDirection="column"
-				padding="4"
-				justifyContent="flex-end"
-				textAlign="center"
-				alignItems="center"
-				color="white"
+		<>
+			<Box
+				height={["200px", null, "300px"]}
+				backgroundImage={`url(${image})`}
+				backgroundPosition="top"
+				backgroundSize="cover"
+				maxW="450px"
+				width="100%"
 			>
-				<Heading fontSize={["2xl", null, "2xl"]} mb="4">
-					{name}
-				</Heading>
-				<Text as="span" fontWeight="medium">
-					{position}
-				</Text>
-			</Flex>
-		</Box>
+				<Flex
+					boxSize="100%"
+					flexDirection="column"
+					padding={[2, null, 4]}
+					justifyContent="flex-end"
+					textAlign="start"
+					alignItems="start"
+				>
+					<Heading
+						fontSize={["sm", null, "md"]}
+						bg="white"
+						padding={[1, null, 2]}
+					>
+						{name}
+					</Heading>
+					<Text
+						as="span"
+						bg="white"
+						fontSize={["xs", null, "sm"]}
+						px={[1, null, 2]}
+						pb={[1, null, 2]}
+					>
+						{position}
+					</Text>
+				</Flex>
+			</Box>
+		</>
 	);
 };
 

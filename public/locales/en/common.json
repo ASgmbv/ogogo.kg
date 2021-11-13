@@ -9,7 +9,7 @@
 		"team": "Team"
 	},
 	"mission": {
-		"title": "Mission",
+		"title": "Our Mission",
 		"people": {
 			"title": "People",
 			"description": "We put our users at the forefront, all our products are designed to improve and make life easier for as many people as possible. We are proud of the products we have created and hope that the products we create in the future will have an even greater positive impact on your life."
@@ -24,7 +24,7 @@
 		}
 	},
 	"projects": {
-		"title": "Products",
+		"title": "Our Products",
 		"project-button": "Details",
 		"taxi": {
 			"description": "Online service for searching, calling and paying for taxi services that can be used by private drivers of Kyrgyzstan! With the help of the Ogogo taxi application, a passenger reserves a car with a driver and tracks its movement to a specified point online. Also, Ogogo taxi is not only a commercial, but also partly a social project. Since it is aimed at developing the domestic economy of the country through the provision of new jobs and money circulation within the country"
@@ -40,7 +40,7 @@
 		}
 	},
 	"team": {
-		"title": "Team",
+		"title": "Our Team",
 		"ahror": {
 			"name": "Ahror Iminov",
 			"description": "Founder"
