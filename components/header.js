@@ -25,7 +25,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/dist/client/router";
 
-import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineMenu } from "react-icons/md";
 
 const Header = () => {
 	const { t } = useTranslation("common");
@@ -41,29 +41,53 @@ const Header = () => {
 					</a>
 					<Stack
 						direction="row"
-						spacing="14"
+						spacing="10"
 						display={["none", null, "flex"]}
-						flex="1"
 						justifyContent="center"
-						color="white"
+						alignItems="center"
 					>
-						<Link href="/#mission">{t("pages.missions")}</Link>
-						<Link href="/#portfolio">{t("pages.projects")}</Link>
-						<Link href="/#team">{t("pages.team")}</Link>
+						<Link href="/#mission" letterSpacing="wider" color="white">
+							{t("pages.missions")}
+						</Link>
+
+						<Link href="/#portfolio" letterSpacing="wider" color="white">
+							{t("pages.projects")}
+						</Link>
+
+						<Link href="/#team" letterSpacing="wider" color="white">
+							{t("pages.team")}
+						</Link>
+
+						<Button
+							borderRadius="full"
+							size="sm"
+							px="5"
+							bg="white"
+							_hover={{
+								bg: "brand",
+								color: "white",
+							}}
+							_active={{
+								bg: "darkBrand",
+								color: "white",
+							}}
+						>
+							{t("header.button")}
+						</Button>
+
+						<Switcher display={["none", null, "flex"]} color="white" />
 					</Stack>
 
-					<Switcher display={["none", null, "flex"]} color="white" />
+					{/* mobile */}
 
 					<IconButton
-						icon={<Icon as={GiHamburgerMenu} />}
+						icon={<Icon as={MdOutlineMenu} boxSize="30px" />}
 						variant="unstyled"
 						onClick={onOpen}
 						display={["block", null, "none"]}
 						color="white"
 						size="lg"
 					/>
-
-					{/* for mobile */}
 
 					<Drawer isOpen={isOpen} placement="left" onClose={onClose}>
 						<DrawerOverlay />
@@ -98,7 +122,11 @@ const Switcher = ({ color, ...props }) => {
 					variant="link"
 					color={color}
 				>
-					{router.locale === "en" ? "English" : "Русский"}
+					{router.locale === "en" ? (
+						<Image width="30px" src="/british-flag.png" />
+					) : (
+						<Image width="30px" src="/russian-flag.png" />
+					)}
 				</MenuButton>
 				<MenuList>
 					<MenuItem

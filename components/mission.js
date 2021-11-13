@@ -4,10 +4,11 @@ import {
 	Grid,
 	Heading,
 	Text,
-	VStack,
+	Flex,
 	Stack,
 	Icon,
 	Center,
+	Divider,
 } from "@chakra-ui/react";
 import { BsPeople } from "react-icons/bs";
 import { GiSunflower } from "react-icons/gi";
@@ -22,16 +23,29 @@ const Mission = () => {
 			<Box my={["80px", null, "100px"]} as="section" id="mission">
 				<Container maxW="container.xl">
 					<Box>
-						<VStack
-							spacing="4"
-							textAlign="center"
+						<Flex
 							mb={["50px", null, "100px"]}
+							textAlign="center"
+							alignItems="center"
 						>
-							<Heading size="xl" letterSpacing="wide">
+							<Divider
+								borderWidth="1px"
+								opacity="0.5"
+								borderColor="brand"
+							/>
+							<Heading
+								fontSize={["3xl", null, "40px"]}
+								letterSpacing="wide"
+								mx="4"
+							>
 								{t("mission.title")}
 							</Heading>
-							<Box height="5px" bg="#FF7A00" width="200px"></Box>
-						</VStack>
+							<Divider
+								borderWidth="1px"
+								opacity="0.5"
+								borderColor="brand"
+							/>
+						</Flex>
 						<Grid templateColumns={["1fr", null, "1fr 1fr 1fr"]} gap="4">
 							<Description
 								icon={
@@ -87,7 +101,7 @@ const Description = ({ icon, title, description }) => {
 	return (
 		<Stack
 			spacing="6"
-			padding="6"
+			padding={[4, null, 6]}
 			borderRadius="xl"
 			border="1px solid rgba(0, 0, 0, 0.1)"
 			alignItems="start"

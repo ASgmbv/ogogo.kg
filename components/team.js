@@ -5,7 +5,7 @@ import {
 	Grid,
 	Heading,
 	Text,
-	VStack,
+	Divider,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
@@ -16,16 +16,29 @@ const Team = () => {
 		<Box my={["80px", null, "100px"]} id="team">
 			<Container maxW="container.xl">
 				<Box>
-					<VStack
-						spacing="4"
-						textAlign="center"
+					<Flex
 						mb={["50px", null, "100px"]}
+						textAlign="center"
+						alignItems="center"
 					>
-						<Heading size="xl" letterSpacing="wide">
+						<Divider
+							borderWidth="1px"
+							opacity="0.5"
+							borderColor="brand"
+						/>
+						<Heading
+							fontSize={["3xl", null, "40px"]}
+							letterSpacing="wide"
+							mx="4"
+						>
 							{t("team.title")}
 						</Heading>
-						<Box height="5px" bg="#FF7A00" width="200px"></Box>
-					</VStack>
+						<Divider
+							borderWidth="1px"
+							opacity="0.5"
+							borderColor="brand"
+						/>
+					</Flex>
 					<Grid
 						templateColumns={[
 							"1fr",

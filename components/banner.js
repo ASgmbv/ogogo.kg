@@ -25,13 +25,18 @@ const Banner = () => {
 				<Container maxW="container.xl" height="100%">
 					<Stack
 						justifyContent="center"
-						alignItems="start"
-						textAlign="start"
+						alignItems={["center", null, "start"]}
 						color="white"
 						height="100%"
 						spacing="10"
 					>
-						<Heading mb="4" maxW="650px" lineHeight="tall" size="lg">
+						<Heading
+							mb="4"
+							maxW="650px"
+							lineHeight="tall"
+							size="lg"
+							textAlign={["center", null, "start"]}
+						>
 							<Text as="span" color="#FF7A00">
 								{"OGOGO GROUP - "}
 							</Text>

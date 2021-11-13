@@ -7,12 +7,8 @@ const theme = extendTheme({
 		body: "Poppins, sans-serif",
 	},
 	colors: {
-		saryy: "#D5A022",
-		jashyl: "#044d2c",
-		achykJashyl: "#269344",
-		kara: "#444D4A",
-		boz: "#EFF1ED",
-		text: "#444D49",
+		brand: "#FF7A00",
+		darkBrand: "#bd600b",
 	},
 	components: {
 		Button: {

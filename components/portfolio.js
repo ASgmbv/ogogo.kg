@@ -7,7 +7,7 @@ import {
 	Heading,
 	Stack,
 	Text,
-	VStack,
+	Divider,
 	Image,
 	Button,
 	Icon,
@@ -23,12 +23,29 @@ const Portfolio = () => {
 			<Container maxW="container.xl">
 				<Box>
 					<Stack spacing={["80px", null, "150px"]}>
-						<VStack spacing="4" textAlign="center">
-							<Heading size="xl" letterSpacing="wide">
-								Наши Проекты
+						<Flex
+							mb={["50px", null, "100px"]}
+							textAlign="center"
+							alignItems="center"
+						>
+							<Divider
+								borderWidth="1px"
+								opacity="0.5"
+								borderColor="brand"
+							/>
+							<Heading
+								fontSize={["3xl", null, "40px"]}
+								letterSpacing="wide"
+								mx="4"
+							>
+								{t("projects.title")}
 							</Heading>
-							<Box height="5px" bg="#FF7A00" width="200px"></Box>
-						</VStack>
+							<Divider
+								borderWidth="1px"
+								opacity="0.5"
+								borderColor="brand"
+							/>
+						</Flex>
 						<Project
 							idx={0}
 							description={t("projects.taxi.description")}

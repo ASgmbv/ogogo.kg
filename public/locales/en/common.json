@@ -60,5 +60,12 @@
 	},
 	"footer": {
 		"rights": "All Rights Reserved"
+	},
+	"get-in-touch": {
+		"title": "Get in touch",
+		"description": "If you would like to contact us or have questions about your booking, please give us a call or request a call back."
+	},
+	"header": {
+		"button": "Contacts"
 	}
 }

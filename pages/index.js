@@ -7,6 +7,7 @@ import Team from "@/components/team";
 import Head from "next/head";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import GetInTouch from "../components/get-in-touch";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 			<Mission />
 			<Portfolio />
 			<Team />
+			<GetInTouch />
 			<Footer />
 		</>
 	);
