@@ -15,7 +15,7 @@
 		"date-fns": "^2.19.0",
 		"framer-motion": "^3.10.0",
 		"isomorphic-fetch": "^3.0.0",
-		"keen-slider": "^5.4.0",
+		"keen-slider": "^5.5.1",
 		"next": "^12.0.3",
 		"next-google-fonts": "^2.1.0",
 		"next-i18next": "^9.0.0",

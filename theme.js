@@ -17,8 +17,16 @@ const theme = extendTheme({
 		brand: "#FF7A00",
 		darkBrand: "rgba(255, 122, 0, 0.8)",
 		or: {
+			400: "#FF7A00",
 			500: "#FF7A00",
+			600: "rgba(255, 122, 0, 0.8)",
 			700: "rgba(255, 122, 0, 0.8)",
+		},
+		ak: {
+			400: "#fff",
+			500: "#fff",
+			600: "#fff",
+			700: "#fff",
 		},
 	},
 	components: {
@@ -27,23 +35,7 @@ const theme = extendTheme({
 				_focus: {
 					boxShadow: "none",
 				},
-				borderRadius: "full",
-				fontWeight: "normal",
-			},
-			sizes: {
-				md: {
-					fontSize: "sm",
-					px: 5,
-					h: 8,
-				},
-				lg: {
-					fontSize: "md",
-					h: 10,
-					px: 7,
-				},
-			},
-			defaultProps: {
-				colorScheme: "or",
+				borderRadius: "md",
 			},
 		},
 		Link: {

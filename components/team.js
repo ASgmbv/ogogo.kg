@@ -55,6 +55,7 @@ const Member = ({ image, name, position }) => {
 				maxW="450px"
 				width="100%"
 				boxShadow={["6px 6px 0px 0px #febc7b"]}
+				borderRadius="sm"
 			>
 				<Flex
 					boxSize="100%"

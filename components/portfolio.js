@@ -137,7 +137,7 @@ const Project = ({ idx, description, title, image }) => {
 						? "-6px 6px 0px 0px #febc7b"
 						: "6px 6px 0px 0px #febc7b",
 				]}
-				borderRadius="sm"
+				borderRadius="md"
 				overflow="hidden"
 			>
 				<Image src={image} layout="fill" objectFit="contain" />

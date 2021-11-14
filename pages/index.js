@@ -5,6 +5,7 @@ import Mission from "@/components/mission";
 import Portfolio from "@/components/portfolio";
 import Team from "@/components/team";
 import Head from "next/head";
+import News from "@/components/news";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import GetInTouch from "../components/get-in-touch";
@@ -15,10 +16,11 @@ export default function Home() {
 			<Head>
 				<title>OGOGO GROUP</title>
 			</Head>
-			<Header />
+			<Header isTransparentAtTop={true} />
 			<Banner />
 			<Mission />
 			<Portfolio />
+			<News />
 			<Team />
 			<GetInTouch />
 			<Footer />

@@ -42,7 +42,14 @@ const Banner = () => {
 							{t("banner.title")}
 						</Heading>
 
-						<Button size="lg">{t("banner.button")}</Button>
+						<Button
+							size="lg"
+							colorScheme="or"
+							borderRadius="full"
+							fontSize="md"
+						>
+							{t("banner.button")}
+						</Button>
 					</Stack>
 				</Container>
 			</Flex>
