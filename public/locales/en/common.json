@@ -64,7 +64,9 @@
 	},
 	"get-in-touch": {
 		"title": "Get in touch",
-		"description": "Are you looking for investment for a startup? Do you want to develop a product or study at our academy? Write to us and we will definitely help you."
+		"description": "Are you looking for investment for a startup? Do you want to develop a product or study at our academy? Write to us and we will definitely help you.",
+		"name": "Name",
+		"text": "Text"
 	},
 	"header": {
 		"button": "Contacts"

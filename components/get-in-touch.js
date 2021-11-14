@@ -76,19 +76,19 @@ const GetInTouch = () => {
 								name={"firstName"}
 								register={register}
 								errors={errors}
-								label="NAME"
+								label={t("get-in-touch.name")}
 							/>
 							<FieldInput
 								name={"email"}
 								register={register}
 								errors={errors}
-								label="EMAIL"
+								label="Email"
 							/>
 							<FieldTextArea
 								name={"text"}
 								register={register}
 								errors={errors}
-								label="TEXT"
+								label={t("get-in-touch.text")}
 							/>
 						</Grid>
 						<Button
