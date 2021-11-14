@@ -14,6 +14,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { BsArrowRight } from "react-icons/bs";
 import Title from "./title";
+import NextLink from "next/link";
 
 const Portfolio = () => {
 	const { t } = useTranslation("common");
@@ -25,21 +26,6 @@ const Portfolio = () => {
 					<Stack spacing={["80px", null, "150px"]}>
 						<Title>{t("projects.title")}</Title>
 
-						<Project
-							idx={0}
-							description={t("projects.taxi.description")}
-							title={
-								<Flex alignItems="center">
-									<Image
-										src="/ogogo-logo.png"
-										width={["25px", null, "50px"]}
-										mr="3"
-									/>
-									<Heading size="lg">OGOGO Taxi</Heading>
-								</Flex>
-							}
-							image="/taxi-banner.png"
-						/>
 						<Project
 							idx={1}
 							description={t("projects.academy.description")}
@@ -85,6 +71,21 @@ const Portfolio = () => {
 							}
 							image="/demaloo-banner.png"
 						/>
+						<Project
+							idx={0}
+							description={t("projects.taxi.description")}
+							title={
+								<Flex alignItems="center">
+									<Image
+										src="/ogogo-logo.png"
+										width={["25px", null, "50px"]}
+										mr="3"
+									/>
+									<Heading size="lg">OGOGO Taxi</Heading>
+								</Flex>
+							}
+							image="/taxi-banner.png"
+						/>
 					</Stack>
 				</Box>
 			</Container>
@@ -114,28 +115,17 @@ const Project = ({ idx, description, title, image }) => {
 				<Text lineHeight="30px" fontSize={["sm", null, "md"]}>
 					{description}
 				</Text>
-				<Button
-					variant="link"
-					colorScheme="orange"
-					color="#FF7A00"
-					rightIcon={<Icon as={BsArrowRight} />}
-					position="relative"
-					_after={{
-						content: "''",
-						position: "absolute",
-						width: "110%",
-						height: "80%",
-						top: "0.5rem",
-						left: "-0.2rem",
-						bg: "#DBF7F2",
-						zIndex: -1,
-						_hover: {
-							boxShadow: "none",
-						},
-					}}
-				>
-					{t("projects.project-button")}
-				</Button>
+				<NextLink href="/academy" passHref>
+					<Button
+						as="a"
+						variant="link"
+						colorScheme="orange"
+						color="#FF7A00"
+						rightIcon={<Icon as={BsArrowRight} />}
+					>
+						{t("projects.project-button")}
+					</Button>
+				</NextLink>
 			</Stack>
 			<AspectRatio
 				ratio={3 / 2}
