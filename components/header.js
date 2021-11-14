@@ -19,9 +19,11 @@ import {
 	useDisclosure,
 	IconButton,
 	Icon,
+	Divider,
+	DrawerHeader,
 } from "@chakra-ui/react";
 import { BiChevronDown } from "react-icons/bi";
-
+import { MdOutlineEmail, MdOutlineLocationOn, MdPhone } from "react-icons/md";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/dist/client/router";
 
@@ -30,6 +32,13 @@ import { MdOutlineMenu } from "react-icons/md";
 import { useEffect, useState } from "react";
 
 import { useViewportScroll } from "framer-motion";
+
+import {
+	RiInstagramLine,
+	RiFacebookCircleLine,
+	RiTwitterLine,
+	RiTelegramLine,
+} from "react-icons/ri";
 
 const Header = ({ isTransparentAtTop = false }) => {
 	const { t } = useTranslation("common");
@@ -63,7 +72,17 @@ const Header = ({ isTransparentAtTop = false }) => {
 			<Container maxW="container.xl">
 				<Flex alignItems="center" justifyContent="space-between">
 					<a href="/">
-						<Image src="/logo-g.svg" width={["35px", null, "40px"]} />
+						{/* <Image src="/logo-g.svg" width={["35px", null, "40px"]} /> */}
+						<Flex alignItems="center" mt="2">
+							<Image
+								src="/logo-g.svg"
+								width={["35px", null, "40px"]}
+								mr="4"
+							/>
+							<Text as="span" color="#FF7A00" fontFamily="Gilroy">
+								{"OGOGO GROUP"}
+							</Text>
+						</Flex>
 					</a>
 					<Stack
 						direction="row"
@@ -95,7 +114,7 @@ const Header = ({ isTransparentAtTop = false }) => {
 							{t("header.button")}
 						</Button>
 
-						<Switcher display={["none", null, "flex"]} color="white" />
+						<Switcher display={["none", null, "flex"]} isTop={isTop} />
 					</Stack>
 
 					{/* mobile */}
@@ -109,19 +128,75 @@ const Header = ({ isTransparentAtTop = false }) => {
 						size="lg"
 					/>
 
-					<Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+					<Drawer
+						isOpen={isOpen}
+						placement="left"
+						onClose={onClose}
+						size="sm"
+					>
 						<DrawerOverlay />
 						<DrawerContent>
 							<DrawerCloseButton />
-							<DrawerBody py="100px">
+							<DrawerHeader>
+								<Flex alignItems="center" mt="2">
+									<Image
+										src="/logo-g.svg"
+										width={["35px", null, "40px"]}
+										mr="4"
+									/>
+									<Text as="span" color="#FF7A00" fontFamily="Gilroy">
+										{"OGOGO GROUP"}
+									</Text>
+								</Flex>
+							</DrawerHeader>
+							<DrawerBody py="50px">
 								<Switcher mb="50px" />
 
-								<Stack spacing="8" my="50px">
-									<Link href={`/${encodeURIComponent("#mission")}`}>
-										{t("pages.missions")}
-									</Link>
+								<Stack
+									spacing="6"
+									my="50px"
+									fontWeight="bold"
+									fontSize="3xl"
+								>
+									<Link href="/#mission">{t("pages.missions")}</Link>
 									<Link href="/#portfolio">{t("pages.projects")}</Link>
 									<Link href="/#team">{t("pages.team")}</Link>
+								</Stack>
+
+								<Divider />
+
+								<Stack
+									direction={["column", null, "row"]}
+									spacing="6"
+									fontSize="xl"
+									my="50px"
+								>
+									<Flex alignItems="center">
+										<Icon as={MdOutlineLocationOn} mr="3" />
+										<Text as="span">{t("footer.street")}</Text>
+									</Flex>
+									<Flex alignItems="center">
+										<Icon as={MdOutlineEmail} mr="3" />
+										<Text as="span">admin@ogogo.kg</Text>
+									</Flex>
+									<Flex alignItems="center">
+										<Icon as={MdPhone} mr="3" />
+										<Text as="span">+996 (550) 312-312</Text>
+									</Flex>
+								</Stack>
+
+								<Divider />
+
+								<Stack spacing="6" direction="row" my="50px">
+									<Link
+										href="https://www.instagram.com/ogogo_academy"
+										isExternal
+									>
+										<Icon as={RiInstagramLine} boxSize="25px" />
+									</Link>
+									<Icon as={RiFacebookCircleLine} boxSize="25px" />
+									<Icon as={RiTelegramLine} boxSize="25px" />
+									<Icon as={RiTwitterLine} boxSize="25px" />
 								</Stack>
 							</DrawerBody>
 						</DrawerContent>
@@ -140,7 +215,7 @@ const HeaderLink = ({ children, isTransparent, href }) => {
 	);
 };
 
-const Switcher = ({ ...props }) => {
+const Switcher = ({ isTop, ...props }) => {
 	const router = useRouter();
 
 	return (
@@ -150,6 +225,7 @@ const Switcher = ({ ...props }) => {
 					as={Button}
 					rightIcon={<BiChevronDown />}
 					variant="link"
+					color={isTop && "white"}
 				>
 					{router.locale === "en" ? "EN" : "RU"}
 				</MenuButton>

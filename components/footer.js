@@ -31,7 +31,16 @@ const Footer = () => {
 					color="white"
 					gap="10"
 				>
-					<Image src="/logo-g.svg" width="40px" alignSelf="center" />
+					<Flex alignItems="center" mt="2">
+						<Image
+							src="/logo-g.svg"
+							width={["35px", null, "40px"]}
+							mr="4"
+						/>
+						<Text as="span" color="#FF7A00" fontFamily="Gilroy">
+							{"OGOGO GROUP"}
+						</Text>
+					</Flex>
 					<Stack divider={<Divider />} spacing="6">
 						<Flex flexDirection="column" flex="1">
 							<Flex

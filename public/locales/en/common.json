@@ -4,8 +4,8 @@
 		"button": "Products"
 	},
 	"pages": {
-		"missions": "Missions",
-		"projects": "Projects",
+		"missions": "Mission",
+		"projects": "Companies",
 		"team": "Team"
 	},
 	"mission": {
