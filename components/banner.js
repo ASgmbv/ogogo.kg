@@ -43,6 +43,8 @@ const Banner = () => {
 						</Heading>
 
 						<Button
+							as="a"
+							href="/#portfolio"
 							size="lg"
 							colorScheme="or"
 							borderRadius="full"

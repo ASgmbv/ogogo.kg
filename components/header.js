@@ -72,19 +72,21 @@ const Header = ({ isTransparentAtTop = false }) => {
 						justifyContent="center"
 						alignItems="center"
 					>
-						<HeaderLink isTransparent={isTop}>
+						<HeaderLink isTransparent={isTop} href="/#mission">
 							{t("pages.missions")}
 						</HeaderLink>
 
-						<HeaderLink isTransparent={isTop}>
+						<HeaderLink isTransparent={isTop} href="/#portfolio">
 							{t("pages.projects")}
 						</HeaderLink>
 
-						<HeaderLink isTransparent={isTop}>
+						<HeaderLink isTransparent={isTop} href="/#team">
 							{t("pages.team")}
 						</HeaderLink>
 
 						<Button
+							as="a"
+							href="/#getintouch"
 							colorScheme="gray"
 							fontWeight="normal"
 							borderRadius="full"
@@ -115,7 +117,9 @@ const Header = ({ isTransparentAtTop = false }) => {
 								<Switcher mb="50px" />
 
 								<Stack spacing="8" my="50px">
-									<Link href="/#mission">{t("pages.missions")}</Link>
+									<Link href={`/${encodeURIComponent("#mission")}`}>
+										{t("pages.missions")}
+									</Link>
 									<Link href="/#portfolio">{t("pages.projects")}</Link>
 									<Link href="/#team">{t("pages.team")}</Link>
 								</Stack>
@@ -128,19 +132,15 @@ const Header = ({ isTransparentAtTop = false }) => {
 	);
 };
 
-const HeaderLink = ({ children, isTransparent }) => {
+const HeaderLink = ({ children, isTransparent, href }) => {
 	return (
-		<Link
-			href="/#portfolio"
-			letterSpacing="wide"
-			color={isTransparent && "white"}
-		>
+		<Link href={href} letterSpacing="wide" color={isTransparent && "white"}>
 			{children}
 		</Link>
 	);
 };
 
-const Switcher = ({ color, ...props }) => {
+const Switcher = ({ ...props }) => {
 	const router = useRouter();
 
 	return (
@@ -150,7 +150,6 @@ const Switcher = ({ color, ...props }) => {
 					as={Button}
 					rightIcon={<BiChevronDown />}
 					variant="link"
-					color={color}
 				>
 					{router.locale === "en" ? "EN" : "RU"}
 				</MenuButton>

@@ -11,9 +11,13 @@ import {
 	Heading,
 	Text,
 	Stack,
+	Flex,
+	Icon,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+import { MdOutlineLocationOn, MdOutlineEmail, MdPhone } from "react-icons/md";
 
 const GetInTouch = () => {
 	const {
@@ -27,7 +31,7 @@ const GetInTouch = () => {
 	const { t } = useTranslation("common");
 
 	return (
-		<Box py={["80px", null, "100px"]}>
+		<Box py={["80px", null, "100px"]} id="getintouch">
 			<Container maxW="container.xl">
 				<Grid
 					templateColumns={["repeat(1, 1fr)", null, "1fr 2fr"]}
@@ -40,6 +44,26 @@ const GetInTouch = () => {
 							<Text lineHeight="tall">
 								{t("get-in-touch.description")}
 							</Text>
+							<Stack spacing="6">
+								<Flex alignItems="center">
+									<Icon as={MdPhone} mr="3" />
+									<Text as="span" fontSize="sm">
+										+996 (550) 312-312
+									</Text>
+								</Flex>
+								<Flex alignItems="center">
+									<Icon as={MdOutlineEmail} mr="3" />
+									<Text as="span" fontSize="sm">
+										admin@ogogo.kg
+									</Text>
+								</Flex>
+								<Flex alignItems="center">
+									<Icon as={MdOutlineLocationOn} mr="3" />
+									<Text as="span" fontSize="sm">
+										{t("footer.street")}
+									</Text>
+								</Flex>
+							</Stack>
 						</Stack>
 					</Box>
 					<form onSubmit={handleSubmit(onSubmit)}>
