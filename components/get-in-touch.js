@@ -35,23 +35,7 @@ const GetInTouch = () => {
 				>
 					<Box>
 						<Stack spacing="4">
-							<Heading
-								size="lg"
-								position="relative"
-								width="fit-content"
-								_after={{
-									position: "absolute",
-									content: "''",
-									width: "110%",
-									height: "70%",
-									top: "0.8rem",
-									left: "-0.2rem",
-									bg: "#DBF7F2",
-									zIndex: -1,
-								}}
-							>
-								{t("get-in-touch.title")}
-							</Heading>
+							<Heading size="lg">{t("get-in-touch.title")}</Heading>
 							<Box padding="1px" bg="orange.400" width="80%"></Box>
 							<Text lineHeight="tall">
 								{t("get-in-touch.description")}
@@ -102,22 +86,7 @@ const GetInTouch = () => {
 const FieldInput = ({ register, errors, name, label, ...props }) => {
 	return (
 		<FormControl isInvalid={errors[name]}>
-			<FormLabel
-				htmlFor={name}
-				fontSize="sm"
-				position="relative"
-				width="fit-content"
-				_after={{
-					position: "absolute",
-					content: "''",
-					width: "110%",
-					height: "70%",
-					top: "0.5rem",
-					left: "-0.2rem",
-					bg: "#F7E8F9",
-					zIndex: -1,
-				}}
-			>
+			<FormLabel htmlFor={name} fontSize="sm">
 				{label}
 			</FormLabel>
 			<Input
@@ -125,7 +94,6 @@ const FieldInput = ({ register, errors, name, label, ...props }) => {
 				borderRadius="sm"
 				border="2px solid"
 				borderColor="brand"
-				boxShadow="6px 6px 0px 0px #febc7b"
 				_hover={{
 					borderColor: "black",
 				}}
@@ -149,22 +117,7 @@ const FieldTextArea = ({ register, errors, name, label, ...props }) => {
 			gridColumnEnd={[2, null, 3]}
 			{...props}
 		>
-			<FormLabel
-				htmlFor={name}
-				fontSize="sm"
-				position="relative"
-				width="fit-content"
-				_after={{
-					position: "absolute",
-					content: "''",
-					width: "110%",
-					height: "70%",
-					top: "0.5rem",
-					left: "-0.2rem",
-					bg: "#F7E8F9",
-					zIndex: -1,
-				}}
-			>
+			<FormLabel htmlFor={name} fontSize="sm">
 				{label}
 			</FormLabel>
 			<Textarea
@@ -172,7 +125,6 @@ const FieldTextArea = ({ register, errors, name, label, ...props }) => {
 				borderRadius="sm"
 				border="2px solid"
 				borderColor="brand"
-				boxShadow="6px 6px 0px 0px #febc7b"
 				resize="none"
 				_hover={{
 					borderColor: "black",

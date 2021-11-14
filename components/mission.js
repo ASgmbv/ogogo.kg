@@ -5,7 +5,6 @@ import {
 	Heading,
 	Text,
 	Stack,
-	Flex,
 	Image,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
@@ -31,33 +30,30 @@ const Mission = () => {
 						>
 							<Description
 								icon={
-									<Box position="relative">
-										<Image src="/eco.png" boxSize="30px" />
-									</Box>
-								}
-								title={t("mission.ecosystem.title")}
-								description={t("mission.ecosystem.description")}
-								textColor="#F7E8F9"
-							/>
-							<Description
-								icon={
 									<Box>
-										<Image src="/people.png" boxSize="30px" />
+										<Image src="/people-icon.png" boxSize="50px" />
 									</Box>
 								}
 								title={t("mission.people.title")}
 								description={t("mission.people.description")}
-								textColor="#DBF7F2"
 							/>
 							<Description
 								icon={
 									<Box>
-										<Image src="/country.png" boxSize="30px" />
+										<Image src="/map.png" boxSize="50px" />
 									</Box>
 								}
 								title={t("mission.country.title")}
 								description={t("mission.country.description")}
-								textColor="#FFEDDC"
+							/>
+							<Description
+								icon={
+									<Box position="relative">
+										<Image src="/networking.png" boxSize="50px" />
+									</Box>
+								}
+								title={t("mission.ecosystem.title")}
+								description={t("mission.ecosystem.description")}
 							/>
 						</Grid>
 					</Container>
@@ -67,35 +63,20 @@ const Mission = () => {
 	);
 };
 
-const Description = ({ icon, title, description, textColor }) => {
+const Description = ({ icon, title, description }) => {
 	return (
 		<Stack
 			spacing="5"
 			padding={[0, null, 6]}
-			borderRadius="xl"
 			alignItems="start"
+			boxShadow="sm"
+			border={[0, null, "1px solid rgba(0, 0, 0, 0.1)"]}
+			borderRadius={["3xl"]}
 		>
-			<Flex alignItems="center">
-				{icon}
-				<Heading
-					size="lg"
-					ml="4"
-					fontWeight="normal"
-					position="relative"
-					_after={{
-						position: "absolute",
-						content: "''",
-						width: "110%",
-						height: "75%",
-						top: "0.8rem",
-						left: "-0.2rem",
-						bg: textColor,
-						zIndex: -1,
-					}}
-				>
-					{title}
-				</Heading>
-			</Flex>
+			{icon}
+			<Heading size="lg" ml="4" fontWeight="normal" position="relative">
+				{title}
+			</Heading>
 
 			<Text lineHeight="30px">{description}</Text>
 		</Stack>

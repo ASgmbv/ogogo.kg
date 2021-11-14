@@ -119,6 +119,20 @@ const Project = ({ idx, description, title, image }) => {
 					colorScheme="orange"
 					color="#FF7A00"
 					rightIcon={<Icon as={BsArrowRight} />}
+					position="relative"
+					_after={{
+						content: "''",
+						position: "absolute",
+						width: "110%",
+						height: "80%",
+						top: "0.5rem",
+						left: "-0.2rem",
+						bg: "#DBF7F2",
+						zIndex: -1,
+						_hover: {
+							boxShadow: "none",
+						},
+					}}
 				>
 					{t("projects.project-button")}
 				</Button>

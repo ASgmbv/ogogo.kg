@@ -50,7 +50,12 @@ const Footer = () => {
 									<Link>Contacts</Link>
 								</Stack>
 								<Stack spacing="6" direction="row">
-									<Icon as={RiInstagramLine} boxSize="25px" />
+									<Link
+										href="https://www.instagram.com/ogogo_academy"
+										isExternal
+									>
+										<Icon as={RiInstagramLine} boxSize="25px" />
+									</Link>
 									<Icon as={RiFacebookCircleLine} boxSize="25px" />
 									<Icon as={RiTelegramLine} boxSize="25px" />
 									<Icon as={RiTwitterLine} boxSize="25px" />

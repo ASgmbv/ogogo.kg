@@ -1,49 +1,24 @@
 import {
-	AspectRatio,
 	Box,
 	Container,
-	Flex,
+	Stack,
 	Heading,
 	IconButton,
 	Text,
 	useBreakpointValue,
+	Image,
+	Button,
+	Icon,
 } from "@chakra-ui/react";
 import { useKeenSlider } from "keen-slider/react";
-import NextImage from "next/image";
-// import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { useState } from "react";
-
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Title from "./title";
+import { BsArrowRight } from "react-icons/bs";
+import NextLink from "next/link";
+import { BsCalendarEvent } from "react-icons/bs";
 
-const destinations = [
-	{
-		image: "/news-students.jpeg",
-		description:
-			"This is the description for destination number 1 which is Kyrgyzstan",
-		title: "Lorem Ipsum Dolor Sit Amet Consectur",
-	},
-	{
-		image: "/news-phones.jpeg",
-		description:
-			"This is the description for destination number 2 which is Kazakhstan",
-		title: "Lorem Ipsum Dolor Sit Amet Consectur",
-	},
-	{
-		image: "/news-bishkek.jpeg",
-		description:
-			"This is the description for destination number 3 which is Uzbekistan",
-		title: "Lorem Ipsum Dolor Sit Amet Consectur",
-	},
-	{
-		image: "/news-children.jpeg",
-		description:
-			"This is the description for destination number 2 which is Kazakhstan",
-		title: "Lorem Ipsum Dolor Sit Amet Consectur",
-	},
-];
-
-function News() {
+function News({ posts }) {
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	const slidesPerView = useBreakpointValue({
@@ -68,107 +43,88 @@ function News() {
 	});
 
 	return (
-		<>
-			<Box as="section" my={["100px", null, "150px"]}>
-				<Container maxW="container.xl">
-					<Title mb={["50px", null, "100px"]}>News</Title>
-				</Container>
-				{slider && (
-					<Box position="relative">
-						<Box
-							ref={sliderRef}
-							className="keen-slider"
-							pl={["0px", null, "100px"]}
-						>
-							{destinations.map(({ image, description, title }) => (
-								<AspectRatio
-									key={`${title}`}
-									className="keen-slider__slide"
-									ratio={[1, null, 5 / 4]}
+		<Box as="section" my={["100px", null, "150px"]}>
+			<Container maxW="container.xl">
+				<Title mb={["50px", null, "100px"]}>News</Title>
+			</Container>
+			{slider && (
+				<Box position="relative">
+					<Box
+						ref={sliderRef}
+						className="keen-slider"
+						pl={["0px", null, "100px"]}
+					>
+						{posts.map(({ cover, slug, title, date }) => (
+							<Stack
+								key={`${slug}`}
+								className="keen-slider__slide"
+								flexDirection="column"
+								spacing={4}
+							>
+								<Image src={cover} objectFit="cover" height="300px" />
+								<Stack
+									spacing={3}
+									px={[4, null, 0]}
+									pb={4}
+									alignItems="start"
 								>
-									<Box
-										boxSize="full"
-										borderRadius={[0, null, "md"]}
-										overflow="hidden"
-										position="relative"
+									<Stack
+										direction="row"
+										spacing="3"
+										alignItems="center"
+										color="gray.500"
 									>
-										<Box position="relative" boxSize="full">
-											<NextImage
-												src={image}
-												alt={title}
-												layout="fill"
-												objectFit="cover"
-											/>
-										</Box>
-										<Flex
-											boxSize="100%"
-											flexDirection="column"
-											position="absolute"
-											top="0"
-											left="0"
-											background="linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.1) 50%)"
-											padding="4"
-											justifyContent="flex-end"
+										<Icon as={BsCalendarEvent} />
+										<Text>{date}</Text>
+									</Stack>
+									<Heading fontSize={["lg", null, "xl"]}>
+										{title}
+									</Heading>
+									<NextLink href={`blog/${slug}`} passHref>
+										<Button
+											as="a"
+											variant="link"
+											colorScheme="or"
+											rightIcon={<Icon as={BsArrowRight} />}
+											position="relative"
 										>
-											<Box
-												bg="#fff"
-												padding={[4, null, 4]}
-												position="relative"
-												_after={{
-													content: "''",
-													position: "absolute",
-													top: -2,
-													left: 2,
-													width: "full",
-													height: "full",
-													border: "2px solid",
-													borderColor: "or.400",
-												}}
-											>
-												<Heading
-													fontSize={["lg", null, "xl"]}
-													mb="2"
-												>
-													{title}
-												</Heading>
-												<Text fontSize="sm">{description}</Text>
-											</Box>
-										</Flex>
-									</Box>
-								</AspectRatio>
-							))}
-						</Box>
+											Details
+										</Button>
+									</NextLink>
+								</Stack>
+							</Stack>
+						))}
+					</Box>
 
-						{slideIndex === 0 ? null : (
+					{slideIndex === 0 ? null : (
+						<SliderButton
+							position="absolute"
+							left={[4, null, 8]}
+							top="50%"
+							transform="translateY(-50%)"
+							icon={<IoChevronBack boxSize={8} />}
+							onClick={() => {
+								slider.prev();
+							}}
+						/>
+					)}
+
+					{(slidesPerView === 3 && slideIndex === 2) ||
+						(slidesPerView === 1 && slideIndex === 4 ? null : (
 							<SliderButton
 								position="absolute"
-								left={[4, null, 8]}
+								right={[4, null, 8]}
 								top="50%"
 								transform="translateY(-50%)"
-								icon={<IoChevronBack boxSize={8} />}
+								icon={<IoChevronForward boxSize={8} />}
 								onClick={() => {
-									slider.prev();
+									slider.next();
 								}}
 							/>
-						)}
-
-						{(slidesPerView === 3 && slideIndex === 2) ||
-							(slidesPerView === 1 && slideIndex === 4 ? null : (
-								<SliderButton
-									position="absolute"
-									right={[4, null, 8]}
-									top="50%"
-									transform="translateY(-50%)"
-									icon={<IoChevronForward boxSize={8} />}
-									onClick={() => {
-										slider.next();
-									}}
-								/>
-							))}
-					</Box>
-				)}
-			</Box>
-		</>
+						))}
+				</Box>
+			)}
+		</Box>
 	);
 }
 

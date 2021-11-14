@@ -1,6 +1,18 @@
-import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Container,
+	Image,
+	Link,
+	Grid,
+	Heading,
+	Stack,
+	Text,
+	Icon,
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import Title from "./title";
+
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Team = () => {
 	const { t } = useTranslation("common");
@@ -15,12 +27,15 @@ const Team = () => {
 					<Grid
 						templateColumns={["1fr 1fr ", null, "1fr 1fr 1fr 1fr"]}
 						justifyItems="center"
-						gap={[4]}
+						columnGap="4"
+						rowGap="8"
 					>
 						<Member
 							image="/ahror.png"
 							name={t("team.ahror.name")}
 							position={t("team.ahror.description")}
+							facebook="https://www.facebook.com/ahror.iminov"
+							instagram="https://www.instagram.com/ahror_iminov_official/"
 						/>
 						<Member
 							image="/islam.png"
@@ -44,46 +59,33 @@ const Team = () => {
 	);
 };
 
-const Member = ({ image, name, position }) => {
+const Member = ({ image, name, position, facebook, instagram }) => {
 	return (
-		<>
-			<Box
+		<Stack width="100%">
+			<Image
+				src={image}
 				height={["200px", null, "300px"]}
-				backgroundImage={`url(${image})`}
-				backgroundPosition="top"
-				backgroundSize="cover"
-				maxW="450px"
-				width="100%"
-				boxShadow={["6px 6px 0px 0px #febc7b"]}
-				borderRadius="sm"
-			>
-				<Flex
-					boxSize="100%"
-					flexDirection="column"
-					padding={[2, null, 4]}
-					justifyContent="flex-end"
-					textAlign="start"
-					alignItems="start"
-				>
-					<Heading
-						fontSize={["sm", null, "md"]}
-						bg="white"
-						padding={[1, null, 2]}
-					>
-						{name}
-					</Heading>
-					<Text
-						as="span"
-						bg="white"
-						fontSize={["xs", null, "sm"]}
-						px={[1, null, 2]}
-						pb={[1, null, 2]}
-					>
-						{position}
-					</Text>
-				</Flex>
-			</Box>
-		</>
+				objectFit="cover"
+				objectPosition="top"
+			/>
+
+			<Heading fontSize={["sm", null, "lg"]}>{name}</Heading>
+			<Text as="span" fontSize={["xs", null, "md"]} color="gray.600">
+				{position}
+			</Text>
+			<Stack direction="row">
+				{facebook && (
+					<Link href={facebook} isExternal>
+						<Icon as={FaFacebook} boxSize="25px" />
+					</Link>
+				)}
+				{instagram && (
+					<Link href={instagram} isExternal>
+						<Icon as={FaInstagram} boxSize="25px" />
+					</Link>
+				)}
+			</Stack>
+		</Stack>
 	);
 };
 
