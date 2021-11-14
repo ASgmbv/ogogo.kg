@@ -18,6 +18,7 @@ import NextLink from "next/link";
 import { BsCalendarEvent } from "react-icons/bs";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { BsArrowRight } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 export async function getStaticProps({ params, locale }) {
 	const posts = await Client().query(
@@ -74,6 +75,8 @@ export async function getStaticPaths() {
 }
 
 const PostPage = ({ posts, post }) => {
+	const { t } = useTranslation("common");
+
 	if (!posts || !post) {
 		return <Box>loading</Box>;
 	}
@@ -116,7 +119,7 @@ const PostPage = ({ posts, post }) => {
 							</Box>
 							<Stack spacing="10">
 								<Heading color="orange.500" fontSize={["2xl"]}>
-									Другие статьи
+									{t("news.other")}
 								</Heading>
 								{posts.map(({ slug, title, cover, date }) => (
 									<Stack key={`${slug}`} spacing={4}>
@@ -152,7 +155,7 @@ const PostPage = ({ posts, post }) => {
 													rightIcon={<Icon as={BsArrowRight} />}
 													position="relative"
 												>
-													Details
+													{t("news.details")}
 												</Button>
 											</NextLink>
 

@@ -73,13 +73,13 @@ const Footer = () => {
 								<Flex alignItems="center">
 									<Icon as={MdOutlineLocationOn} mr="3" />
 									<Text as="span" fontSize="sm">
-										г. Бишкек, ул. Ибраимова 115/1
+										{t("footer.street")}
 									</Text>
 								</Flex>
 								<Flex alignItems="center">
 									<Icon as={MdOutlineEmail} mr="3" />
 									<Text as="span" fontSize="sm">
-										ogogoacademy@gmail.com
+										admin@ogogo.kg
 									</Text>
 								</Flex>
 								<Flex alignItems="center">

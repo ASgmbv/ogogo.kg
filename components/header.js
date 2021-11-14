@@ -152,11 +152,7 @@ const Switcher = ({ color, ...props }) => {
 					variant="link"
 					color={color}
 				>
-					{router.locale === "en" ? (
-						<Image width="30px" src="/british-flag.png" />
-					) : (
-						<Image width="30px" src="/russian-flag.png" />
-					)}
+					{router.locale === "en" ? "EN" : "RU"}
 				</MenuButton>
 				<MenuList>
 					<MenuItem

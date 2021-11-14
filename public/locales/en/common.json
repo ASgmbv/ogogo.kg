@@ -59,7 +59,8 @@
 		}
 	},
 	"footer": {
-		"rights": "All Rights Reserved"
+		"rights": "All Rights Reserved",
+		"street": "115/1 ibraimova street, Bishkek, Kyrgyzstan, 720021"
 	},
 	"get-in-touch": {
 		"title": "Get in touch",
@@ -67,5 +68,10 @@
 	},
 	"header": {
 		"button": "Contacts"
+	},
+	"news": {
+		"title": "News",
+		"details": "Details",
+		"other": "Other news"
 	}
 }

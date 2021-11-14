@@ -1,13 +1,20 @@
-import { Heading, Flex, Divider } from "@chakra-ui/react";
+import { Heading, Box, Flex } from "@chakra-ui/react";
 
 const Title = ({ children, ...props }) => {
 	return (
-		<Flex textAlign="center" alignItems="center" {...props}>
-			<Divider borderWidth="1px" opacity="0.5" borderColor="brand" />
-			<Heading fontSize={["4xl", null, "4xl"]} mx="4" whiteSpace="nowrap">
+		<Flex
+			flexDirection="column"
+			textAlign="center"
+			alignItems="center"
+			width="fit-content"
+			mx="auto"
+			{...props}
+		>
+			<Heading fontSize={["4xl", null, "4xl"]} mb="4">
 				{children}
 			</Heading>
-			<Divider borderWidth="1px" opacity="0.5" borderColor="brand" />
+
+			<Box height="3px" bg="or.500" width="80%"></Box>
 		</Flex>
 	);
 };

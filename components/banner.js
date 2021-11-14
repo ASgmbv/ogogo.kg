@@ -36,7 +36,7 @@ const Banner = () => {
 							size="lg"
 							textAlign={["center", null, "start"]}
 						>
-							<Text as="span" color="#FF7A00">
+							<Text as="span" color="#FF7A00" fontFamily="Gilroy">
 								{"OGOGO GROUP - "}
 							</Text>
 							{t("banner.title")}

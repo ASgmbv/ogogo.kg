@@ -17,9 +17,11 @@ import Title from "./title";
 import { BsArrowRight } from "react-icons/bs";
 import NextLink from "next/link";
 import { BsCalendarEvent } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 function News({ posts }) {
 	const [slideIndex, setSlideIndex] = useState(0);
+	const { t } = useTranslation("common");
 
 	const slidesPerView = useBreakpointValue({
 		base: 1,
@@ -45,7 +47,7 @@ function News({ posts }) {
 	return (
 		<Box as="section" my={["100px", null, "150px"]}>
 			<Container maxW="container.xl">
-				<Title mb={["50px", null, "100px"]}>News</Title>
+				<Title mb={["50px", null, "100px"]}>{t("news.title")}</Title>
 			</Container>
 			{slider && (
 				<Box position="relative">
@@ -88,7 +90,7 @@ function News({ posts }) {
 											rightIcon={<Icon as={BsArrowRight} />}
 											position="relative"
 										>
-											Details
+											{t("news.details")}
 										</Button>
 									</NextLink>
 								</Stack>
