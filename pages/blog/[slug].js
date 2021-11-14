@@ -31,8 +31,6 @@ export async function getStaticProps({ params, locale }) {
 
 	const post = await Client().getByUID("post", params.slug);
 
-	console.dir(post, { depth: null });
-
 	return {
 		props: {
 			posts: posts.results.map((el) => ({
