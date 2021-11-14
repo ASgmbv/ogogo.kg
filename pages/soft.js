@@ -15,6 +15,7 @@ import GetInTouch from "../components/get-in-touch";
 import Header from "../components/header";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 import {
 	FaPython,
@@ -39,6 +40,9 @@ export default function SoftPage() {
 
 	return (
 		<>
+			<Head>
+				<title>OGOGO Soft</title>
+			</Head>
 			<Header />
 
 			<Box py={["120px"]}>
@@ -158,6 +162,49 @@ export default function SoftPage() {
 										{title}
 									</Text>
 								</Stack>
+							))}
+						</Grid>
+					</Box>
+
+					<Box my={["80px", null, "100px"]}>
+						<Heading size="lg" textAlign="center" mb="10">
+							{t("numbers")}
+						</Heading>
+						<Grid
+							templateColumns={["1fr 1fr", null, "repeat(4, 1fr)"]}
+							gap={[4, null, 10]}
+						>
+							{[
+								{
+									bigText: "+3",
+									smallText: "experience",
+								},
+								{
+									bigText: "+15",
+									smallText: "happy-customers",
+								},
+								{
+									bigText: "+23",
+									smallText: "finished-projects",
+								},
+								{
+									bigText: "+30",
+									smallText: "employees",
+								},
+							].map(({ bigText, smallText }) => (
+								<Box
+									key={bigText + smallText}
+									padding="4"
+									paddingY="6"
+									boxShadow="md"
+									borderRadius="xl"
+									textAlign="center"
+								>
+									<Heading color="#666666" mb="4">
+										{bigText}
+									</Heading>
+									<Text>{t(smallText)}</Text>
+								</Box>
 							))}
 						</Grid>
 					</Box>

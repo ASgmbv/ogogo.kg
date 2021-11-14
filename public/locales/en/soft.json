@@ -2,6 +2,7 @@
 	"description": "The company is engaged in the implementation of information technology in various areas of enterprises, both for private consumers and large enterprises. Our company helps our clients unleash the desired potential of their enterprise to a completely different level by integrating innovative ideas and fresh trends in the design world. We implement the ideas of our clients with the help of high-quality personnel in the IT infrastructure.",
 	"development": "Development",
 	"projects": "Projects",
+	"numbers": "OGOGO in numbers",
 	"software-development": {
 		"title": "Custom software development",
 		"description": "OGOGO SOFT custom software development services give businesses a competitive edge via Full Cycle Software Development Process including: Web app solution Mobile app solutions UI/UX"
@@ -25,5 +26,9 @@
 	"software-integration": {
 		"title": "Software Integration",
 		"description": "GOGO SOFT connects IT systems, microservices and transfers data, including cloud data, from one database to another, providing: Data integration API Integration Service Oriented Architecture (SOA)"
-	}
+	},
+	"experience": "years of experience",
+	"happy-customers": "happy customers",
+	"finished-projects": "finished projects",
+	"employees": "employees"
 }
