@@ -7,7 +7,6 @@ import {
 	Button,
 	Stack,
 } from "@chakra-ui/react";
-
 import { useTranslation } from "next-i18next";
 
 const Banner = () => {
@@ -43,22 +42,7 @@ const Banner = () => {
 							{t("banner.title")}
 						</Heading>
 
-						<Button
-							borderRadius="full"
-							size="lg"
-							px="5"
-							bg="white"
-							_hover={{
-								bg: "brand",
-								color: "white",
-							}}
-							_active={{
-								bg: "darkBrand",
-								color: "white",
-							}}
-						>
-							{t("banner.button")}
-						</Button>
+						<Button size="lg">{t("banner.button")}</Button>
 					</Stack>
 				</Container>
 			</Flex>

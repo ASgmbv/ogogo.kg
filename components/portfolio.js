@@ -134,8 +134,8 @@ const Project = ({ idx, description, title, image }) => {
 					"6px 6px 0px 0px #febc7b",
 					null,
 					idx % 2 === 0
-						? "-8px 8px 0px 0px #febc7b"
-						: "8px 8px 0px 0px #febc7b",
+						? "-6px 6px 0px 0px #febc7b"
+						: "6px 6px 0px 0px #febc7b",
 				]}
 				borderRadius="sm"
 				overflow="hidden"

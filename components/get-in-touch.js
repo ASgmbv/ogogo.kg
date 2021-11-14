@@ -67,19 +67,7 @@ const GetInTouch = () => {
 								label="TEXT"
 							/>
 						</Grid>
-						<Button
-							mt={10}
-							size="lg"
-							borderRadius="none"
-							bg="#ED8671"
-							_hover={{
-								bg: "#b56757",
-							}}
-							_after={{
-								bg: "#b56757",
-							}}
-							color="white"
-						>
+						<Button mt={8} size="lg">
 							Submit
 						</Button>
 					</form>
@@ -98,8 +86,9 @@ const FieldInput = ({ register, errors, name, label, ...props }) => {
 			<Input
 				id={name}
 				borderRadius="none"
-				border="1px solid"
-				borderColor="black"
+				border="2px solid"
+				borderColor="brand"
+				boxShadow="3px 3px 0px 0px #febc7b"
 				_hover={{
 					borderColor: "black",
 				}}
@@ -129,11 +118,15 @@ const FieldTextArea = ({ register, errors, name, label, ...props }) => {
 			<Textarea
 				id={name}
 				borderRadius="0"
-				border="1px solid"
-				borderColor="black"
+				border="2px solid"
+				borderColor="brand"
+				boxShadow="3px 3px 0px 0px #febc7b"
 				resize="none"
 				_hover={{
 					borderColor: "black",
+				}}
+				_active={{
+					boxShadow: "none",
 				}}
 				{...register(name, {
 					required: "This is required",

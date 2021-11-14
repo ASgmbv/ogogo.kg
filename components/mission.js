@@ -5,12 +5,9 @@ import {
 	Heading,
 	Text,
 	Stack,
-	Icon,
-	Center,
+	Flex,
+	Image,
 } from "@chakra-ui/react";
-import { BsPeople } from "react-icons/bs";
-import { GiSunflower } from "react-icons/gi";
-import { FiCheckCircle } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import Title from "./title";
 
@@ -20,86 +17,87 @@ const Mission = () => {
 	return (
 		<>
 			<Box my={["80px", null, "100px"]} as="section" id="mission">
-				<Container maxW="container.xl">
-					<Box>
+				<Box>
+					<Container maxW="container.xl">
 						<Title mb={["50px", null, "100px"]}>
 							{t("mission.title")}
 						</Title>
+					</Container>
 
+					<Container maxW="container.xl">
 						<Grid
 							templateColumns={["1fr", null, "1fr 1fr 1fr"]}
 							gap={[10]}
 						>
 							<Description
 								icon={
-									<Center
-										boxSize="50px"
-										bg="teal.400"
-										color="white"
-										borderRadius="lg"
-									>
-										<Icon as={BsPeople} boxSize="30px" />
-									</Center>
-									// <Image src="/people.png" boxSize="80px" />
-								}
-								title={t("mission.people.title")}
-								description={t("mission.people.description")}
-							/>
-							<Description
-								icon={
-									<Center
-										boxSize="50px"
-										bg="red.400"
-										color="white"
-										borderRadius="lg"
-									>
-										<Icon as={GiSunflower} boxSize="30px" />
-									</Center>
-									// <Image src="/country.png" boxSize="80px" />
-								}
-								title={t("mission.country.title")}
-								description={t("mission.country.description")}
-							/>
-							<Description
-								icon={
-									<Center
-										boxSize="50px"
-										bg="orange.400"
-										color="white"
-										borderRadius="lg"
-									>
-										<Icon as={FiCheckCircle} boxSize="30px" />
-									</Center>
-									// <Image src="/eco.png" boxSize="80px" />
+									<Box position="relative">
+										<Image src="/eco.png" boxSize="30px" />
+									</Box>
 								}
 								title={t("mission.ecosystem.title")}
 								description={t("mission.ecosystem.description")}
+								textColor="#F7E8F9"
+							/>
+							<Description
+								icon={
+									<Box>
+										<Image src="/people.png" boxSize="30px" />
+									</Box>
+								}
+								title={t("mission.people.title")}
+								description={t("mission.people.description")}
+								textColor="#DBF7F2"
+							/>
+							<Description
+								icon={
+									<Box>
+										<Image src="/country.png" boxSize="30px" />
+									</Box>
+								}
+								title={t("mission.country.title")}
+								description={t("mission.country.description")}
+								textColor="#FFEDDC"
 							/>
 						</Grid>
-					</Box>
-				</Container>
+					</Container>
+				</Box>
 			</Box>
 		</>
 	);
 };
 
-const Description = ({ icon, title, description }) => {
+const Description = ({ icon, title, description, textColor }) => {
 	return (
 		<Stack
-			spacing="6"
+			spacing="5"
 			padding={[0, null, 6]}
 			borderRadius="xl"
-			border={["none", null, "1px solid rgba(0, 0, 0, 0.1)"]}
 			alignItems="start"
 		>
-			{icon}
-			<Heading
-				size="lg"
-				// textShadow="3px -3px #FF7A00"
-			>
-				{title}
-			</Heading>
-			<Text lineHeight="taller">{description}</Text>
+			<Flex alignItems="center">
+				{icon}
+				<Heading
+					size="lg"
+					ml="4"
+					fontWeight="normal"
+					position="relative"
+					_after={{
+						position: "absolute",
+						content: "''",
+						width: "110%",
+						height: "75%",
+						top: "0.8rem",
+						left: "-0.2rem",
+						bg: textColor,
+						zIndex: -1,
+					}}
+				>
+					{title}
+				</Heading>
+			</Flex>
+
+			<Text lineHeight="30px">{description}</Text>
 		</Stack>
 	);
 };

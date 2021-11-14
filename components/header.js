@@ -58,22 +58,7 @@ const Header = () => {
 							{t("pages.team")}
 						</Link>
 
-						<Button
-							borderRadius="full"
-							size="sm"
-							px="5"
-							bg="white"
-							_hover={{
-								bg: "brand",
-								color: "white",
-							}}
-							_active={{
-								bg: "darkBrand",
-								color: "white",
-							}}
-						>
-							{t("header.button")}
-						</Button>
+						<Button colorScheme="gray">{t("header.button")}</Button>
 
 						<Switcher display={["none", null, "flex"]} color="white" />
 					</Stack>

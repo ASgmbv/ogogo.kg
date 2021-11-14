@@ -10,12 +10,16 @@ const theme = extendTheme({
 		}),
 	},
 	fonts: {
-		heading: "Poppins, sans-serif",
-		body: "Inter, sans-serif",
+		heading: "Ubuntu, sans-serif",
+		body: "Ubuntu, sans-serif",
 	},
 	colors: {
 		brand: "#FF7A00",
-		darkBrand: "#bd600b",
+		darkBrand: "rgba(255, 122, 0, 0.8)",
+		or: {
+			500: "#FF7A00",
+			700: "rgba(255, 122, 0, 0.8)",
+		},
 	},
 	components: {
 		Button: {
@@ -23,6 +27,23 @@ const theme = extendTheme({
 				_focus: {
 					boxShadow: "none",
 				},
+				borderRadius: "full",
+				fontWeight: "normal",
+			},
+			sizes: {
+				md: {
+					fontSize: "sm",
+					px: 5,
+					h: 8,
+				},
+				lg: {
+					fontSize: "md",
+					h: 10,
+					px: 7,
+				},
+			},
+			defaultProps: {
+				colorScheme: "or",
 			},
 		},
 		Link: {
