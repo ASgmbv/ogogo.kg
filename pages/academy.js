@@ -17,6 +17,7 @@ import GetInTouch from "../components/get-in-touch";
 import Header from "../components/header";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 import {
 	FaPython,
@@ -49,6 +50,9 @@ export default function AcademyPage() {
 
 	return (
 		<>
+			<Head>
+				<title>OGOGO Academy</title>
+			</Head>
 			<Header />
 
 			<Box py={["120px"]}>
@@ -83,10 +87,7 @@ export default function AcademyPage() {
 						<Heading size="lg" textAlign="center" mb="10">
 							{t("courses")}
 						</Heading>
-						<Grid
-							gap="5"
-							templateColumns={["1fr 1fr", null, "1fr 1fr 1fr"]}
-						>
+						<Grid gap="5" templateColumns={["1fr", null, "1fr 1fr 1fr"]}>
 							{[
 								{
 									title: "Python",
@@ -136,7 +137,7 @@ export default function AcademyPage() {
 										<Icon as={icon} color="white" boxSize="30px" />
 									</Circle>
 									<Heading size="md">{title}</Heading>
-									<Text>{description}</Text>
+									<Text color="gray.600"> {description}</Text>
 								</Stack>
 							))}
 						</Grid>

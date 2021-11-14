@@ -40,6 +40,7 @@ const Portfolio = () => {
 								</Flex>
 							}
 							image="/academy-banner.png"
+							href="/academy"
 						/>
 						<Project
 							idx={2}
@@ -55,6 +56,7 @@ const Portfolio = () => {
 								</Flex>
 							}
 							image="/ogogo-group-banner.png"
+							href="/soft"
 						/>
 						<Project
 							idx={3}
@@ -70,6 +72,7 @@ const Portfolio = () => {
 								</Flex>
 							}
 							image="/demaloo-banner.png"
+							href="/demaloo"
 						/>
 						<Project
 							idx={0}
@@ -93,7 +96,7 @@ const Portfolio = () => {
 	);
 };
 
-const Project = ({ idx, description, title, image }) => {
+const Project = ({ idx, description, title, image, href }) => {
 	const { t } = useTranslation("common");
 
 	return (
@@ -115,17 +118,19 @@ const Project = ({ idx, description, title, image }) => {
 				<Text lineHeight="30px" fontSize={["sm", null, "md"]}>
 					{description}
 				</Text>
-				<NextLink href="/academy" passHref>
-					<Button
-						as="a"
-						variant="link"
-						colorScheme="orange"
-						color="#FF7A00"
-						rightIcon={<Icon as={BsArrowRight} />}
-					>
-						{t("projects.project-button")}
-					</Button>
-				</NextLink>
+				{href && (
+					<NextLink href={href} passHref>
+						<Button
+							as="a"
+							variant="link"
+							colorScheme="orange"
+							color="#FF7A00"
+							rightIcon={<Icon as={BsArrowRight} />}
+						>
+							{t("projects.project-button")}
+						</Button>
+					</NextLink>
+				)}
 			</Stack>
 			<AspectRatio
 				ratio={3 / 2}

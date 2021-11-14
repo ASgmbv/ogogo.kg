@@ -1,0 +1,29 @@
+{
+	"description": "The company is engaged in the implementation of information technology in various areas of enterprises, both for private consumers and large enterprises. Our company helps our clients unleash the desired potential of their enterprise to a completely different level by integrating innovative ideas and fresh trends in the design world. We implement the ideas of our clients with the help of high-quality personnel in the IT infrastructure.",
+	"development": "Development",
+	"projects": "Projects",
+	"software-development": {
+		"title": "Custom software development",
+		"description": "OGOGO SOFT custom software development services give businesses a competitive edge via Full Cycle Software Development Process including: Web app solution Mobile app solutions UI/UX"
+	},
+	"mobile-application-development": {
+		"title": "Mobile Application Development",
+		"description": "OGOGO SOFT can provide support at any stage of developing a custom mobile application, from creating a test application to a full-fledged product: Cross-platform iOS and Android apps Native Application Development"
+	},
+	"subcontracting-software-development": {
+		"title": "Subcontracting software development",
+		"description": "Subcontracting software development services reduce costs and streamline business processes. We provide: Timely execution of works Flexible pricing policy Quality execution"
+	},
+	"business-software-solutions": {
+		"title": "Software Solutions for Business",
+		"description": "OGOGO SOFT creates software solutions for business, solving workflow problems that enterprises often face, including c: Integration of applications with advanced technologies Business process management Automation of the production process"
+	},
+	"it-consultation": {
+		"title": "IT Consultation",
+		"description": "OGOGO SOFT provides IT consulting services to help optimize your business and drive its growth: System Integrations Data analytics IOT"
+	},
+	"software-integration": {
+		"title": "Software Integration",
+		"description": "GOGO SOFT connects IT systems, microservices and transfers data, including cloud data, from one database to another, providing: Data integration API Integration Service Oriented Architecture (SOA)"
+	}
+}

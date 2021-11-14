@@ -91,16 +91,16 @@ const Header = ({ isTransparentAtTop = false }) => {
 						justifyContent="center"
 						alignItems="center"
 					>
-						<HeaderLink isTransparent={isTop} href="/#mission">
-							{t("pages.missions")}
+						<HeaderLink isTransparent={isTop} href="/academy">
+							{t("pages.academy")}
 						</HeaderLink>
 
-						<HeaderLink isTransparent={isTop} href="/#portfolio">
-							{t("pages.projects")}
+						<HeaderLink isTransparent={isTop} href="/soft">
+							{t("pages.soft")}
 						</HeaderLink>
 
-						<HeaderLink isTransparent={isTop} href="/#team">
-							{t("pages.team")}
+						<HeaderLink isTransparent={isTop} href="/demaloo">
+							{t("pages.demaloo")}
 						</HeaderLink>
 
 						<Button
@@ -158,9 +158,9 @@ const Header = ({ isTransparentAtTop = false }) => {
 									fontWeight="bold"
 									fontSize="3xl"
 								>
-									<Link href="/#mission">{t("pages.missions")}</Link>
-									<Link href="/#portfolio">{t("pages.projects")}</Link>
-									<Link href="/#team">{t("pages.team")}</Link>
+									<Link href="/academy">{t("pages.academy")}</Link>
+									<Link href="/soft">{t("pages.soft")}</Link>
+									<Link href="/demaloo">{t("pages.demaloo")}</Link>
 								</Stack>
 
 								<Divider />

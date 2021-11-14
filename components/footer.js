@@ -53,10 +53,9 @@ const Footer = () => {
 									direction={["column", null, "row"]}
 									mb={[10, null, 0]}
 								>
-									<Link href="/#mission">{t("pages.missions")}</Link>
-									<Link href="/#portfolio">{t("pages.projects")}</Link>
-									<Link href="/#team">{t("pages.team")}</Link>
-									<Link>Contacts</Link>
+									<Link href="/academy">{t("pages.academy")}</Link>
+									<Link href="/soft">{t("pages.soft")}</Link>
+									<Link href="/demaloo">{t("pages.demaloo")}</Link>
 								</Stack>
 								<Stack spacing="6" direction="row">
 									<Link

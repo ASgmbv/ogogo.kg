@@ -4,9 +4,9 @@
 		"button": "Все проекты"
 	},
 	"pages": {
-		"missions": "Миссия",
-		"projects": "Компании",
-		"team": "Команда"
+		"academy": "Академия",
+		"soft": "Разработка",
+		"demaloo": "Demaloo"
 	},
 	"mission": {
 		"title": "Наша Миссия",

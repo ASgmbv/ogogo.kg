@@ -4,9 +4,9 @@
 		"button": "Products"
 	},
 	"pages": {
-		"missions": "Mission",
-		"projects": "Companies",
-		"team": "Team"
+		"academy": "Academy",
+		"soft": "Soft",
+		"demaloo": "Demaloo"
 	},
 	"mission": {
 		"title": "Our Mission",
